@@ -1,0 +1,20 @@
+<!-- This is a bootstrap class that creates a card with a margin bottom of 4. -->
+<div class="card mb-4" *ngIf="user">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="user.image" class="img-fluid rounded-start" [alt]="user.first_name" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#modal'+ user.id" role='button'>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{ user.first_name }} {{user.last_name}}</h5>
+                <div class="card-text d-flex justify-content-center align-items-center">
+            <a class="btn m-1 bg-primary text-white" [routerLink]="['/user', user.id]"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a class="btn m-1 bg-warning" [routerLink]="['/updateuser', user.id]"><i class="fa-solid fa-arrows-rotate"></i></a>
+            <button class="btn m-1 bg-danger text-white" (click)="removeUser(user.id)"><i
+                class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

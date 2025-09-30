@@ -1,0 +1,83 @@
+/*******VALDIATION*******/
+/* Changing the border color of the input field to red if the input is invalid and the user has touched
+the input field. */
+input.ng-invalid.ng-touched {
+    border: 3px solid #d9534f;
+}
+
+/* Changing the border color of the input field to green if the input is valid and the user has touched
+the input field. */
+input.ng-valid.ng-touched {
+    border: 3px solid rgb(18, 183, 18);
+}
+
+/* Styling the error message. */
+.error {
+    color: #d9534f;
+    font-size: 16px;
+}
+
+/* Styling the warning message. */
+.warning {
+    color: #da9e11;
+    font-size: 16px;
+}
+
+/* ======================== */
+/* Making the label relative to the input. */
+.input-group {
+    position: relative;
+}
+
+/* Setting the label to be absolute, and then setting the top and left to be -30px and -26px
+respectively. */
+label {
+    position: absolute;
+    top: -30px;
+    left: -26px;
+    line-height: 16px;
+    display: inline-flex;
+    column-gap: 10px;
+    align-items: center;
+    transition: transform .25s,
+        opacity .25s;
+}
+
+/* Adding a border to the label. */
+label::before {
+    border-bottom: solid 1px #000000;
+    opacity: 0;
+}
+
+/* Moving the label to the right by 26px. */
+.input-group:focus-within label {
+    transform: translateX(26px);
+}
+
+/* Making the label visible when the input is focused. */
+.input-group:focus-within label::before {
+    opacity: 1;
+    transition-delay: .1s;
+}
+
+/* Styling the input field. */
+input {
+    display: block;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Making the placeholder disappear when the input is focused. */
+input::placeholder {
+    color: rgb(199, 216, 248);
+    transition: opacity .25s;
+    font-style: italic;
+}
+
+/* Making the placeholder disappear when the input is focused. */
+input:focus::placeholder {
+    opacity: 0;
+}

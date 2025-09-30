@@ -1,0 +1,44 @@
+/********CARDS**********/
+/* Setting the background color of the card to a gray color. */
+.card {
+    background-color: rgba(128, 128, 128, 0.661);
+}
+
+
+/********TAB************/
+
+/* Centering the tabs. */
+.tabs {
+    width: 75%;
+    margin: 0 auto;
+}
+
+/* Removing the bullets from the list, making the list display as a flexbox, and centering the list
+items. */
+.tabs .menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+/* Styling the list items. */
+.tabs .menu li {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 120%;
+    color: white;
+}
+
+/* Changing the background color of the tab when it is hovered over. */
+.tabs .menu li:hover,
+.tabs .menu .activo {
+    background-color: rgba(128, 128, 128, 0.661);
+}
+
+/* Adding padding to the section. */
+.tabs section {
+    padding: 15px;
+}

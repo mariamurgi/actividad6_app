@@ -1,0 +1,67 @@
+<section class="container mt-5" *ngIf="myUser">
+    <div class="card p-3">
+        <div class="row p-4 justify-content-between align-items-center">
+            <figure class="col-12 col-md-4">
+                <img class="img-fluid rounded-circle me-3 w-75 mx-auto" [src]="myUser.image"
+                    [alt]="myUser.first_name">
+            </figure>
+            <div class="col-12 col-md-8 p-5 border-start border-primary border-4">
+                <h2 class="fw-bold mb-2"> {{ myUser.first_name }} {{myUser.last_name}}</h2>
+                <p>Username: <span class="fw-bold p-2">{{myUser.username}}</span></p>
+                <p>Email: <a [href]=" 'mailto:' + myUser.email "> <span
+                            class="fw-bold p-2">{{myUser.email}}</span></a>
+                </p>
+                <button class="btn btn-danger mt-2 mx-2" (click)="removeUser(myUser.id)">Delete</button>
+                <a class="btn btn-warning mt-2 mx-2" [routerLink]="['/updateuser', myUser.id]">Update</a>
+                <a class="btn btn-dark mt-2 mx-2" [routerLink]="['/home']">Back to the list</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div *ngIf="!myUser" class="d-flex justify-content-center mt-5">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<aside class="container my-5" *ngIf="myUser">
+    <div class="tabs">
+        <nav>
+            <ul class="menu d-flex flex-column flex-lg-row bg-primary">
+                <li [ngClass]="{ 'activo': activeTab === 'aboutme' }" (click)="setTab('aboutme')">About me</li>
+                <li [ngClass]="{ 'activo': activeTab === 'experience' }" (click)="setTab('experience')">
+                    Experience</li>
+                <li [ngClass]="{ 'activo': activeTab === 'studies' }" (click)="setTab('studies')">Estudies</li>
+            </ul>
+        </nav>
+    <section *ngIf="activeTab === 'aboutme'">
+            <h3>About me</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
+                blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
+                voluptas quo?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem, adipisci laboriosam
+                exercitationem
+                perferendis quod. Obcaecati dicta consequuntur incidunt pariatur similique illum ad officiis, et
+                praesentium
+                assumenda est, tempora asperiores.</p>
+        </section>
+    <section *ngIf="activeTab === 'experience'">
+            <h3>Experience</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
+                blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
+                voluptas quo?</p>
+        </section>
+    <section *ngIf="activeTab === 'studies'">
+            <h3>Estudies</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
+                blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
+                voluptas quo?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem, adipisci laboriosam
+                exercitationem
+                perferendis quod. Obcaecati dicta consequuntur incidunt pariatur similique illum ad officiis, et
+                praesentium
+                assumenda est, tempora asperiores.</p>
+        </section>
+    </div>
+</aside>

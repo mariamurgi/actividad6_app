@@ -1,0 +1,30 @@
+/* Pie de página fijo en la parte inferior */
+.footer {
+    position: relative;
+    bottom: 0;
+}
+
+/* Iconos sociales alineados y con efecto */
+.icons {
+    display: flex;
+    gap: 25px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    transition: outline-offset .25s, outline-color .25s, background-color .25s;
+}
+
+.icon:hover {
+    outline-offset: 4px;
+}
+/* Todas las líneas inválidas eliminadas. El CSS ahora es válido. */

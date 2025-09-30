@@ -1,0 +1,46 @@
+<!-- The modal that will be shown when the user clicks on the card. -->
+<div class="modal fade" [id]="'modal'+user.id" tabindex="-1" aria-labelledby="'modal'+user.id + 'Label'"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Creating a unique id for each modal. -->
+                <h5 class="modal-title fw-bold" [id]="'modal'+user.id + 'Label'"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img [src]="user.image" class="zoom card-img-top mt-4 rounded-circle"
+                    alt="{{ user.username }} photography" />
+                <div class="card-body">
+                    <div class="card-body-text my-3 text-center">
+                        <p class="card-text fw-bold">
+                            {{ user.first_name }} {{ user.last_name }}
+                        </p>
+                    </div>
+                    <div class="card-body-icons d-flex">
+                        <div class="icons card-body-icons-search d-flex flex-column align-items-center m-2 p-2">
+                            <!-- Creating a button that will take you to the user page. -->
+                            <button class="btn m-1 bg-primary text-white" [routerLink]="['/user', user.id]"
+                                data-bs-dismiss="modal"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                            <p class="card-body-icons-text mt-2 fw-bold text-primary">Details</p>
+                        </div>
+                        <div class="icons card-body-icons-update d-flex flex-column align-items-center m-2 p-2">
+                            <!-- Creating a button that will take you to the update page. -->
+                            <button class="btn m-1 bg-warning" [routerLink]="['/update', user.id]"
+                                data-bs-dismiss="modal"><i class="fa-solid fa-arrows-rotate"></i></button>
+                            <p class="card-body-icons-text mt-2 fw-bold text-warning">Update</p>
+                        </div>
+                        <div class="icons card-body-icons-erase d-flex flex-column align-items-center m-2 p-2">
+                            <!-- This is a button that will call the `deleteUser` function and pass in the
+                    `myUser.id` as a parameter. -->
+                            <button class="btn m-1 bg-danger text-white" (click)="removeUser(user.id)"
+                                data-bs-dismiss="modal"><i class="fa-solid fa-trash"></i></button>
+                            <p class="card-body-icons-text mt-2 fw-bold text-danger">Delete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<!-- A bootstrap class that centers the content of the div. -->
+<div class="d-flex align-items-center justify-content-center">
+    <!-- Centering the text. -->
+    <div class="text-center mt-4">
+        <!-- A bootstrap class that makes the text bigger. -->
+        <h1 class="display-1 fw-bold">404</h1>
+        <!-- Using the `fs-3` class to make the text bigger and the `text-danger` class to make the text red. -->
+        <p class="fs-3">
+            <span class="text-danger">Opps!</span> Page not found.
+        </p>
+        <!-- A paragraph that is using the `lead` class to make the text bigger. -->
+        <p class="lead">The page you’re looking for doesn’t exist.</p>
+        <!-- Using the `routerLink` directive to navigate to the `/home` route. -->
+        <a class="btn btn-primary" [routerLink]="['/home']">Go Home</a>
+    </div>
+</div>
